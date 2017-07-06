@@ -177,8 +177,8 @@ $B_l(X)$.  That is, the ``leakage" of the operator outside the light-cone is sma
 Let $A$ be supported on $X$ and $B$ be supported on $Y$. Let $\epsilon = t/N$ where $N$ is large, and lets define $t_n = nt/N = n\epsilon$. Then we have
 \be
 \left\Vert[A(t),B]\right\Vert-\left\Vert[A(0),B]\right\Vert 
-=\sum_{i=0}^{N-1}\epsilon\times
-\frac{\left\Vert[A(t_{n+1}),B]\right\Vert-\left\Vert[A(t_n),B]\right\Vert}{\epsilon}.
+=\sum_{n=0}^{N-1}
+\left\Vert[A(t_{n+1}),B]\right\Vert-\left\Vert[A(t_n),B]\right\Vert
 \label{sumid} 
 \ee
 We proceed to evaluate the summand on the right hand side.
@@ -217,9 +217,68 @@ Consider some $M,N$
 &\le& 2\left\Vert M \right\Vert\left\Vert N \right\Vert
 \end{eqnarray}
 Using this, we write
+\begin{eqnarray}
+\left\Vert[A(t_{n+1}),B]\right\Vert-\left\Vert[A(t_n),B]\right\Vert 
+&\le& 2\epsilon\left\Vert A \right\Vert \left\Vert [I_X(t_n),B] \right\Vert+{\cal O}(\epsilon^2)\ret\ret
+&\le& \sum_{Z:Z\cap X\ne \emptyset}2\epsilon\left\Vert A \right\Vert \left\Vert [H_Z(t_n),B] \right\Vert+{\cal O}(\epsilon^2)\ret
+&\le& \sum_{Z:Z\cap X\ne \emptyset}2\epsilon\left\Vert H_Z \right\Vert \left\Vert [A(t_n),B] \right\Vert+{\cal O}(\epsilon^2)
+\end{eqnarray}
+
+where the last expression can be obtained by writing the Hamiltonian as a time evolution, and then doing some algebra. Substituting this in (\ref{sumid}), we get
 \be
-\left\Vert[A(t_{n+1}),B]\right\Vert-\left\Vert[A(t_n),B]\right\Vert \le 2\epsilon\left\Vert A \right\Vert \left\Vert [I_X(t_n),B] \right\Vert+{\cal O}(\epsilon^2)
+ \left\Vert[A(t),B]\right\Vert-\left\Vert[A(0),B]\right\Vert 
+\le 2\left\Vert H_Z \right\Vert \times \sum_{n=0}^{N-1}
+\sum_{Z:Z\cap X\ne \emptyset} \epsilon \times \left\Vert [A(t_n),B] \right\Vert+{\cal O}(\epsilon^2)
+\ee
+In the limit $\epsilon\downarrow 0$ (ie. $N\uparrow\infty$), we can change the summation to an integration as follows,
+\be
+\left\Vert[A(t),B]\right\Vert-\left\Vert[A(0),B]\right\Vert 
+\le \sum_{Z:Z\cap X\ne \emptyset}2\Vert H_Z\Vert\int_0^{|t|}ds 
+\left\Vert[A(s),B]\right\Vert
+\label{Commnormbound}
 \ee
 
 
+We define 
+\begin{equation}
+c:=\sup_{A\in{\cal A}_X}\frac{\Vert[A(t),B]\Vert}{\Vert A\Vert},
+\label{CBXt}
+\end{equation}
+where ${\cal A}_X$ is the set of observables supported on
+the set $X$. Then we have
+\be
+C_B(X,t)  \le C_B(X,0) +\sum_{Z:Z\cap X\ne \emptyset} 2\Vert H_Z\Vert\int_0^{|t|} ds\> C_B(Z,s)
+\label{boundCB}
+\ee
+ 
+By definition of $C_B(X,t)$, we can say that $C_B(X,0) = 0$ because $dist(X,Y) > 0$. Hence,
+\be
+C_B(X,t)  \le \sum_{Z:Z\cap X\ne \emptyset} 2\Vert H_Z\Vert\int_0^{|t|} ds\> C_B(Z,s)
+\ee
+ 
+Now we use (\ref{boundCB}) iteratively on the above equation,
+\begin{eqnarray}
+C_B(X,t)&\le&2\sum_{Z_1:Z_1\cap X\ne\emptyset}\Vert H_{Z_1}\Vert
+\int_0^{|t|}ds_1\> C_B(Z_1,s_1)\ret
+&\le&2\sum_{Z_1:Z_1\cap X\ne\emptyset}\Vert H_{Z_1}\Vert
+\int_0^{|t|}ds_1\> C_B(Z_1,0)\ret
+&+&2^2\sum_{Z_1:Z_1\cap X\ne\emptyset}\Vert H_{Z_1}\Vert
+\sum_{Z_2:Z_2\cap Z_1\ne\emptyset}\Vert H_{Z_2}\Vert
+\int_0^{|t|}ds_1\int_0^{|s_1|}ds_2\> C_B(Z_2,s_2)\ret
+\end{eqnarray}
+We can prove using definition of $C_B(X,t)$ that $C_B(Z,0)\le2\Vert B \Vert$ if $Z\cap Y\ne\emptyset$, and $C_B(Z,0) = 0$ otherwise. Using this we can further write,
+\begin{eqnarray}
+C_B(X,t)
+&\le&2\Vert B\Vert(2|t|)\sum_{Z_1:Z_1\cap X\ne\emptyset,Z_1\cap Y\ne\emptyset}
+\Vert H_{Z_1}\Vert\ret
+&+&2\Vert B\Vert\frac{(2|t|)^2}{2!}
+\sum_{Z_1:Z_1\cap X\ne\emptyset}\Vert H_{Z_1}\Vert
+\sum_{Z_2:Z_2\cap Z_1\ne\emptyset,Z_2\cap Y\ne\emptyset}\Vert H_{Z_2}\Vert\ret
+&+&2\Vert B\Vert\frac{(2|t|)^3}{3!}
+\sum_{Z_1:Z_1\cap X\ne\emptyset}\Vert H_{Z_1}\Vert
+\sum_{Z_2:Z_2\cap Z_1\ne\emptyset}\Vert H_{Z_2}\Vert
+\sum_{Z_3:Z_3\cap Z_2\ne\emptyset,Z_3\cap Y\ne\emptyset}\Vert H_{Z_3}\Vert+\cdots
+\ret
+\label{CBseries}
+\end{eqnarray}
 \end{document}
