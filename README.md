@@ -1,6 +1,6 @@
 Study notes for thesis at Centre for High Energy Physics (CHEP) at the Indian Institute of Science, Bengaluru.
 
-Check List
+Check List :-
 
 - [ ] Write thesis, and look for courses at ICTS and IISc
 - [ ] Write JNB paper
@@ -9,7 +9,7 @@ Papers for Project :-
 
 - [ ] Many Body Localization by Sims et al
 - [ ] Susskind and Zhao review for the Journal Club Talk
-- [ ] 'Lieb-Robinson and the butterfly effect' by Roberts and Swingle
+- [ ] Lieb-Robinson and the butterfly effect by Roberts and Swingle
 
 Reading from TBs :-
 
@@ -23,6 +23,7 @@ Good Physicist? :-
 
 - [ ] AdS/CFT from 'Papers' - Natsuume is good apparently, concentrate on Penedones
 - [ ] Read Minwalla papers, especially the ones on hydrodynamics
+- [ ] Group Theory from Zee
 - [ ] Read Raju's papers on Black Hole Complementarity
 - [ ] Tong Lectures on Advanced Quantum Mechanics
 - [ ] Tong Lectures on the Quantum Hall Effect
@@ -32,6 +33,7 @@ Free time? :-
 - [ ] LIGO OSC Data Sets
 - [ ] Blog on - GWSCHOOL, Susskind Paper, MBL and LR Bounds
 - [ ] What will the Schwarzschild solution lead to when the test particle has initial angular velocity (TeX it up)
+- [ ] IISc Pre-req problems
 
 Completed :-
 - [x] Revise angular momentum QM and 4-vector formalism of electromagnetism
