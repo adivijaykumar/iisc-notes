@@ -4,6 +4,7 @@ Check List :-
 
 - [ ] Write thesis, and look for courses at ICTS and IISc
 - [ ] Write JNB paper
+- [ ] Green Function review from Boas
 
 Papers for Project :-
 
