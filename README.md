@@ -5,7 +5,7 @@ Check List :-
 - [ ] Write thesis, and look for courses at ICTS and IISc
 - [ ] Write JNB paper
 - [ ] Green Function review from Boas
-
+- [ ] Have a look at Switchbacks and the Bridge to Nowhere - Susskind and Zhao
 Papers for Project :-
 
 - [ ] Many Body Localization by Sims et al

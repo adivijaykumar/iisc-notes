@@ -11,8 +11,8 @@
 %
 
 \documentclass[twoside]{article}
-\setlength{\oddsidemargin}{0.25 in}
-\setlength{\evensidemargin}{-0.25 in}
+\setlength{\oddsidemargin}{0.00 in}
+\setlength{\evensidemargin}{0.00 in}
 \setlength{\topmargin}{-0.6 in}
 \setlength{\textwidth}{6.5 in}
 \setlength{\textheight}{8.5 in}
@@ -42,6 +42,41 @@
 \renewcommand{\theequation}{\thelecnum.\arabic{equation}}
 \renewcommand{\thefigure}{\thelecnum.\arabic{figure}}
 \renewcommand{\thetable}{\thelecnum.\arabic{table}}
+
+\def\CA{{\cal{A}}}
+\def\CB{{\cal{B}}}
+\def\CC{{\cal{C}}}
+\def\CD{{\cal{D}}}
+\def\CE{{\cal{E}}}
+\def\CF{{\cal{F}}}
+\def\CG{{\cal{G}}}
+\def\CH{{\cal{H}}}
+\def\CI{{\cal{I}}}
+\def\CJ{{\cal{J}}}
+\def\CK{{\cal{K}}}
+\def\CL{{\cal{L}}}
+\def\CM{{\cal{M}}}
+\def\CN{{\cal{N}}}
+\def\CO{{\cal{O}}}
+\def\CP{{\cal{P}}}
+\def\CQ{{\cal{Q}}}
+\def\CR{{\cal{R}}}
+\def\CS{{\cal{S}}}
+\def\CT{{\cal{T}}}
+\def\CU{{\cal{U}}}
+\def\CV{{\cal{V}}}
+\def\CW{{\cal{W}}}
+\def\CX{{\cal{X}}}
+\def\CY{{\cal{Y}}}
+\def\CZ{{\cal{Z}}}
+\def\B{{\cal{B}}}
+\def\CA{{\cal{A}}}
+\def\t{\tau}
+\def\cg{complexity geometry}
+\def\as{analog system}
+\def\kl{$k$-local}
+\def\sa{$\CA$}
+\def\qt{quantum teleportation \ }
 
 \DeclareMathOperator{\Tr}{Tr}
 \def\eq{&=&}
@@ -106,6 +141,7 @@
          \setlength{\labelwidth}{1.6truecm}}}
 \def\endrefs{\end{list}}
 \def\bibentry#1{\item[\hbox{[#1]}]}
+\def\mean#1{\left< #1 \right>}
 
 %Use this command for \bf a figure; it puts \bf a figure in wherever you want it.
 %usage: \fig{NUMBER}{SPACE-IN-INCHES}{CAPTION}
@@ -141,7 +177,19 @@
 % macros follow.  
 %**** IN GENERAL, BE BRIEF. LONG SCRIBE NOTES, NO MATTER HOW WELL WRITTEN,
 %**** ARE NEVER READ BY ANYBODY.
+\section{Discussions on Entanglement and its Properties}
 
+\textbf{Density Matrix} - If $|i \ra, i= 1 \ldots N$ are states in a mixed state system, with $\rho_1 \ldots \rho_N$ being the probability density corresponding to the states. Then, we define the density matrix $\rho$ as $$\rho = diag(\rho_1,\rho_2,\ldots,\rho_N)$$
+
+\textbf{Quantum Entropy} - One can make use of different measures to calculate quantum entropy. The \textit{von Neumann entropy} is one such measure and is defined as $$S=-\mean{\log \rho}=-Tr(\rho \log \rho)$$
+
+\textbf{Monogamy of Entanglement} - It is often mentioned in literature that entanglement is monogamous. Monogamy of entanglement refers to the idea that if two systems have strong entanglement, they cannot be entangled with any other system.
+
+Suppose $\rho_{AB} = |\psi \ra \la \psi|_{AB}$ where $\la \psi|_{AB}$ is in a pure, maximally entangled state. By the above definition, since $|\psi \ra_{AB}$ is pure, any extension $\rho_{ABC}$ should factorize as $$\rho_{ABC}= \rho_{AB} \bigotimes \rho_C$$ What it also means is that $\rho_{AC}= \rho_{A} \bigotimes \rho_C$ and $\rho_{BC}= \rho_{B} \bigotimes \rho_C$ are product states.
+
+Questions - How does one mathematically prove the monogamy principle? Does maximally entangled state correspond to maximal entropy?
+
+\section{Experiment with Classical and Quantum Information}
 The characters in this $gedanken$ story are Alice, Bob, Charlie and Eve.
 
 Charlie produces two identical bits of information, with the rule that both the bits are either 0 or 1. Let's call these bits $\bf A$ and $\bf B$ respectively.
@@ -163,10 +211,49 @@ The two qubits that Alice has is a linear combination any one of the following (
 |y\ra \eq |10\ra - |01\ra   \cr  
 |z\ra \eq |00\ra - |11\ra   
 \eea
-Measurement gives Alice one of the outcomes $(1,x,y,z)$. She writes this up and sends it to Bob, who applies the corresponding operator on his qubit. Hence, his qubit is always $$|\Phi\ra_B \equiv \Phi(0)|0\ra_B + \Phi(1) |1\ra_B$$ ie. the same as $\bf T$.
+Measurement gives Alice one of the outcomes $(1,x,y,z)$. She writes this up and sends it to Bob, who applies the corresponding operator on his qubit. Hence, his qubit is always $$|\Phi\ra_B \equiv \Phi(0)|0\ra_B + \Phi(1) |1\ra_B$$ i.e. the same as $\bf T$.
 
 But, can Eve intercept the message and find out about $\bf T$? No! Bell's basis states are maximally entangled. Entanglement is monogamous, in the sense that if $\bf A$ and $\bf B$ are maximally entangled. they \textit{cannot} be correlated with any other factors - Charlie's brain, gravitational radiation, or anything else.
 
 But if one believes ER = EPR, then these maximally entangled EPR pairs should be connected by a microscopic Einstein-Rosen bridge.
+
+\section{Dynamics of Teleportation}
+
+We assume \textit{fast scrambling}, and this assumptions brings with it the prerequisite that the Hamiltionian of the system should be described by $k$-local dynamics (but NOT spatially local. Why?). It has been shown that Schwarzschild BHs are fast scramblers, and so are AdS black holes that have Schwarzschild radii same as the AdS length scale. The scrambling time is given by $t_* = \log S$, $S$ being the entropy. The number of qubits needed to represent the state in the entropy itself. Hence, we can write $$H = \sum_{i,j} h_{ij}$$ where $h_{ij}$ only depends on the $i^{th}$ and $j^{th}$ spin qubits.
+
+Let us assume that the BH has a fixed number of qubits. This allows us to study a BH at equilibrium. But perturbations in the BH state tend to increase the entropy of the BH. In AdS/CFT, one considers an infinite collection of UV degrees of freedom to serve as a reservoir of frozen qubits, which can be excited on perturbing the Black Hole.
+
+So then, we have a model - the BH in equilibrium is made up of frosted qubits, and perturbations correspond to defrosting the qubits, i.e. turning on interactions with other interacting qubits.
+
+Our aim is to represent the dynamics of the system, i.e. to say how the system evolves in time. We can pictorially draw a \textbf{quantum circuit} by a grid of lines, with vertical lines representing qubits and horizontal lines representing the gates, or in our case the action of the operator.
+
+An important class of operators in \textbf{precursors}. They are operators which look like Heisenberg operators, but are operators in the Schrodinger sense. The precursor associated with the operator $A$ has the form $$U^{\dag}(t) \ A \ U(t)$$
+We can draw a quantum circuit for the precursor as follows (insert image)
+
+Let $U_N(t)$ be the time evolution operator we are interested in, and let $t_*=\log N$ be the scrambling time in some units. Corresponding to $t_*$, one defines the unitary time evolution operator $V_N = U_N(t_*) = \exp(-iHt_*)$. In circuit representation, $V_N$ would have $K$ inputs and $K$ outputs (Question - This is due to unitarity, right?).
+
+(insert image)
+
+We would like to calculate the complexity of the teleportation protocol. This behooves us to define the notion of \textbf{complexity} in quantum computation. First, we define the size $s(t)$ of a one qubit operator $W$. $$s(t)= \sum_i \textbf{Tr}[W(t),X_i]^2$$ where $\textbf{Tr}$ denotes the normalized trace, i.e., $\bf Tr \it  I = 1$.
+
+The size of a precursor grows exponentially with time until it saturates at the scrambling time,
+\bea  
+s(t)\eq e^t   \ \ \ \ \ t \leq t_*  \cr 
+s(t) \eq N  \ \  \ \ \ t \geq t_*
+\eea
+The complexity of a precursor is related to the size by,
+\be 
+ \frac{\d\CC }{dt} = s(t).
+\ee
+
+Hence, for time scales lesser than $t_*$, $s$ and $\CC$ are essentially the same. The fact that complexity does not begin to grow linearly before the scrambling time is known as the \textbf{switchback effect}. This is related to the cancellation between the gates of $U$ and $U^{\dag}$. (Question - What exactly is this?)
+
+For the circuit $V$, $\CC(V) = N \log N$. Hence for the time evolution $V^\dag \ W \ V$
+\be 
+\CC(V^{\dag} W V) \leq \CC(V^{\dag}) + \CC( W) + \CC( V) \approx 2N \log{N}.
+\label{subadditivity}
+\ee
+
+But, the switchback effect says that $$\CC(V^{\dag} W V) \leq \CC(V^{\dag}) + \CC( W) + \CC( V) = N $$
 
 \end{document}
