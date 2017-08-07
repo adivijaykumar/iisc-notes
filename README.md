@@ -25,7 +25,7 @@ Good Physicist? :-
 - [ ] AdS/CFT from 'Papers' - Natsuume is good apparently, concentrate on Penedones
 - [ ] Read Minwalla papers, especially the ones on hydrodynamics
 - [ ] Group Theory from Zee
-- [ ] Read Raju's papers on Black Hole Complementarity
+- [ ] Read Raju's papers on Black Hole Complementarity and Interiors, also comments by Harlow
 - [ ] Tong Lectures on Advanced Quantum Mechanics
 - [ ] Tong Lectures on the Quantum Hall Effect
 

@@ -28,6 +28,7 @@
 \usepackage{amsthm}
 \usepackage{amstext}
 \usepackage{amssymb}
+\usepackage{float}
 
 \newcommand{\sgn}{{\rm sign}}
 \newcommand{\ret}{\nonumber \\}
@@ -228,11 +229,25 @@ So then, we have a model - the BH in equilibrium is made up of frosted qubits, a
 Our aim is to represent the dynamics of the system, i.e. to say how the system evolves in time. We can pictorially draw a \textbf{quantum circuit} by a grid of lines, with vertical lines representing qubits and horizontal lines representing the gates, or in our case the action of the operator.
 
 An important class of operators in \textbf{precursors}. They are operators which look like Heisenberg operators, but are operators in the Schrodinger sense. The precursor associated with the operator $A$ has the form $$U^{\dag}(t) \ A \ U(t)$$
-We can draw a quantum circuit for the precursor as follows (insert image)
+We can draw a quantum circuit for the precursor as follows 
 
-Let $U_N(t)$ be the time evolution operator we are interested in, and let $t_*=\log N$ be the scrambling time in some units. Corresponding to $t_*$, one defines the unitary time evolution operator $V_N = U_N(t_*) = \exp(-iHt_*)$. In circuit representation, $V_N$ would have $K$ inputs and $K$ outputs (Question - This is due to unitarity, right?).
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.3]{pictures/grid-minus1}
+\caption{Schematic illustration of a quantum circuit for the time-evolution operator $U(t).$}.
+\label{grid-0}
+\end{center}
+\end{figure}
 
-(insert image)
+Let $U_N(t)$ be the time evolution operator we are interested in, and let $t_*=\log N$ be the scrambling time in some units. Corresponding to $t_*$, one defines the unitary time evolution operator $V_N = U_N(t_*) = \exp(-iHt_*)$. Basically, we use $V_N$ to evolve into equilibrium state. In circuit representation, $V_N$ would have $K$ inputs and $K$ outputs (Question - This is due to unitarity, right?).
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=.3]{pictures/grid-0}
+\caption{Time evolution operator for a precursor $U^{\dag}(t) \  A \ U(t)$ Note that the operator $U(t)$ acts on $N$ qubits and $U^{\dag}(t)$ acts on $N+1$ qubits.  The arrows on the right indicate the direction of time-flow.}
+\label{grid-0}
+\end{center}
+\end{figure}
 
 We would like to calculate the complexity of the teleportation protocol. This behooves us to define the notion of \textbf{complexity} in quantum computation. First, we define the size $s(t)$ of a one qubit operator $W$. $$s(t)= \sum_i \textbf{Tr}[W(t),X_i]^2$$ where $\textbf{Tr}$ denotes the normalized trace, i.e., $\bf Tr \it  I = 1$.
 
@@ -255,5 +270,26 @@ For the circuit $V$, $\CC(V) = N \log N$. Hence for the time evolution $V^\dag \
 \ee
 
 But, the switchback effect says that $$\CC(V^{\dag} W V) \leq \CC(V^{\dag}) + \CC( W) + \CC( V) = N $$
+
+\section{Teleportation Protocol}
+
+Let us set up our quantum teleportation in the following manner :- 
+
+\begin{itemize}
+ \item Two mediating entangled systems belonging to Alice and Bob. Alice's portion of the mediator is called \textbf{A}, and Bob's is called \textbf{B}. This system is called the \textit{mediator}.
+ \item Another system that Alice wishes to teleport to Bob. This system is denoted by \textbf{T}, and is called the \textit{teleportee}.
+\end{itemize}
+
+The entanglement entropy of the mediator is $N$. One can model such a system by considering $2N$ qubits in maximally entangled state. (Question - Why?)The teleportee is modelled as a system of $n$ qubits in the state $|\phi \ra$. The teleportation would be said to be \textit{successful} if a $n$-qubit subsystem of \textbf{B} becomes a pure state $|\phi \ra$.
+
+There are a few things we would expect from teleportation :-
+\begin{itemize}
+ \item A successful teleportation diminishes the amount of entanglement by at least $n$. Hence $n \le N$ should be satisfied.
+ \item Teleportation of $n$-qubit system requires transferring at least $2n$ classical bits between Alice and Bob. The classical transfer takes place through \textit{exterior} spacetime. (Question - What?! Why? How?)
+\end{itemize}
+ 
+In this protocol, we only consider small system teleportation, meaning $n<<N$. It is also imperative to define the notion of a computational basis for the teleportation, which is essentially the collection of simultaneous eigenvectors of the N (spin-flip) Pauli operators $Z_i$. We can label any state as $|I \ra = |11 \dots 010101 \ra$.
+
+Let the initial state of the mediator be maximally entangled in the \textit{Thermofield Double state} (Question - What is this?) $$|TFD \ra = \sum_I |I \ra_A |I \ra_B$$ We also consider the teleportee to be in a state $|\phi \ra_T = \sum_k \phi(k) |k \ra_T$, where $k$ is the set of computational states in the Hilbert space of \textbf{T}. We can hence write the composite initial state as $$|initial \ra = \sum_{k,I} \phi(k) |k \ra_T |I \ra_A |I \ra_B  $$ Finally, we want there to exist a subsystem of Bob's qubits in the pure state $|\phi \ra_B = \sum_j \phi(j) |j \ra_B$
 
 \end{document}
