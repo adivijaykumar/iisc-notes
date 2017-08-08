@@ -292,4 +292,29 @@ In this protocol, we only consider small system teleportation, meaning $n<<N$. I
 
 Let the initial state of the mediator be maximally entangled in the \textit{Thermofield Double state} (Question - What is this?) $$|TFD \ra = \sum_I |I \ra_A |I \ra_B$$ We also consider the teleportee to be in a state $|\phi \ra_T = \sum_k \phi(k) |k \ra_T$, where $k$ is the set of computational states in the Hilbert space of \textbf{T}. We can hence write the composite initial state as $$|initial \ra = \sum_{k,I} \phi(k) |k \ra_T |I \ra_A |I \ra_B  $$ Finally, we want there to exist a subsystem of Bob's qubits in the pure state $|\phi \ra_B = \sum_j \phi(j) |j \ra_B$
 
+We shall assume that before teleportation begins, $\textbf{T}$ is absorbed and scrambled with the black hole degrees of freedom. This means we can be ready for teleportation only after $t_* = \log N$. In the initial state then, we combine Alice's mediator with the teleportee qubit to create $|AT \ra$ and scramble them together. Hence, we can write $$V|initial \ra = \sum_{k,I} \phi (k)V_{N+1} |kI \ra_{AT} |I \ra_B $$
+
+We pick any two qubits from the $|AT \ra$ system and call them $\theta$. $\theta$ actually can stand for the following :-
+\begin{itemize}
+ \item The two chosen qubits.
+ \item In the form $|\theta \ra$, basis states for the two-qubit system in the computational basis.
+ \item A bit string of length two representing the outcome of an experiment of the two qubits.
+\end{itemize}
+
+The remaining $(N-1)$ qubits are denoted by $\alpha$. Hence, we can rewrite the above equation as 
+$$V|initial \ra = \sum_{k,I,\theta,\alpha} \phi (k)|\theta,\alpha \ra \la \theta,\alpha| V_{(N+1)} |kI \ra_{AT} |I \ra_B
+&=& \sum_{k,I,\theta,\alpha} \phi (k) V^{\theta,\alpha}_{k,I} |\theta,\alpha \ra |I \ra_B $$
+
+Alice measures $\theta$ and gets some result. She sends this result in form of a classical two-bit string to Bob. Bob, on receiving the message, acts on his mediator subsystem with a unitary $Z^\theta$, The final state is hence,
+$$\sum_{k,I,\theta,\alpha,j} \phi (k) V^{\theta,\alpha}_{k,I} |\theta,\alpha \ra \la \beta,j|Z^\theta|I \ra_B |\beta,j\ra_B$$
+Here Bob's qubits have been partitioned to $(N-1)$ qubits named $\beta$ and one named $j$. This can be drawn as a circuit in the following way \newpage
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=.3]{pictures/small-teleportation.pdf}
+\caption{A circuit for teleporting a single qubit through an entangled state of $N+N$ qubits.  At this stage the unitary operator  $Z$ on Bob's side is unspecified}
+\label{small-teleportation}
+\end{center}
+\end{figure}
+
 \end{document}

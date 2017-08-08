@@ -2,10 +2,12 @@ Study notes for thesis at Centre for High Energy Physics (CHEP) at the Indian In
 
 Check List :-
 
-- [ ] Write thesis, and look for courses at ICTS and IISc
+- [ ] Write thesis
 - [ ] Write JNB paper
-- [ ] Green Function review from Boas
-- [ ] Have a look at Switchbacks and the Bridge to Nowhere - Susskind and Zhao
+- [ ] Feynman-Hibbs and Sakurai Path Integrals, exp(ipq), <p|q>
+- [ ] Green Function and Branch Cuts review from Boas
+- [ ] Have a look at Switchbacks and the Bridge to Nowhere - Susskind and Zhao, fast scramblers
+
 Papers for Project :-
 
 - [ ] Many Body Localization by Sims et al
