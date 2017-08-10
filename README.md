@@ -4,9 +4,8 @@ Check List :-
 
 - [ ] Write thesis
 - [ ] Write JNB paper
-- [ ] Feynman-Hibbs and Sakurai Path Integrals, exp(ipq), <p|q>
+- [ ] Feynman-Hibbs and Sakurai Path Integrals, exp(ipq), <p|q>, write up notes
 - [ ] Green Function and Branch Cuts review from Boas
-- [ ] Have a look at Switchbacks and the Bridge to Nowhere - Susskind and Zhao, fast scramblers
 
 Papers for Project :-
 
@@ -39,4 +38,5 @@ Free time? :-
 - [ ] IISc Pre-req problems
 
 Completed :-
+- [x] Have a look at Switchbacks and the Bridge to Nowhere - Susskind and Zhao, fast scramblers, and some other appendices and references in susskind zhao
 - [x] Revise angular momentum QM and 4-vector formalism of electromagnetism
