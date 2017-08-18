@@ -150,8 +150,6 @@
 %\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
 
 % **** IF YOU WANT TO DEFINE ADDITIONAL MACROS FOR YOURSELF, PUT THEM HERE:
-\newcommand{\be}{\begin{equation}}
-\newcommand{\ee}{\end{equation}}
 \newcommand\E{\mathbb{E}}
 
 
@@ -168,11 +166,11 @@ $$X|x \ra = x|x \ra$$
 $$\la x | x^\prime \ra = \delta(x-x^\prime)$$
 $$\int dx |x \ra \la x| = 1$$
 $$P|p \ra = p|p \ra$$
-$$\la p | x \ra = \frac{1}{\sqrt{2 \pi \hbar}} \int dp \ e^{-ipx/\hbar}} = \la x | p \ra^*$$
-$$f(x) = \la x | f \ra = \int dp \la x|p\ra \la p | f \ra = \frac{1}{\sqrt{2 \pi \hbar}} \int dp \ e^{-ipx/\hbar}} \la p | f \ra$$
+$$\la p | x \ra = \frac{1}{\sqrt{2 \pi \hbar}} \int dp \ e^{-ipx/\hbar} = \la x | p \ra^*$$
+$$f(x) = \la x | f \ra = \int dp \la x|p\ra \la p | f \ra = \frac{1}{\sqrt{2 \pi \hbar}} \int dp \ e^{-ipx/\hbar} \la p | f \ra$$
 
 \section{Ordering and Conventions}
-In the Hmailtonian way of looking at things, we just promote the classical observables to operators while making the classical $\rightarrow$ quantum transition. But there is a slight problem - $[x_{cl},p_{cl}] = 0$, but $[x_{op},p_{op}] \ne 0$. Hence, we need to worry about the order in which we write the $p$'s and $x$'s.
+In the Hamiltonian way of looking at things, we just promote the classical observables to operators while making the classical $\rightarrow$ quantum transition. But there is a slight problem - $[x_{cl},p_{cl}] = 0$, but $[x_{op},p_{op}] \ne 0$. Hence, we need to worry about the order in which we write the $p$'s and $x$'s.
 
 There is no unique well-defined principle to do this. Two conventions are defined below :-
 
@@ -184,29 +182,27 @@ There is no unique well-defined principle to do this. Two conventions are define
 \item \textbf{Weyl Ordering} - One symmetrizes the product, and weights them equally.
   $$ px \xrightarrow{WO} \frac{px + xp}{2}$$
   $$ px^2 \xrightarrow{WO} \frac{px^2 + xpx + x^2p}{3}$$
-  $$ x^m p^n \xrightarrow{WO} \frac{(\ldots)}{\binom{m+n}{m}}
+  $$ x^m p^n \xrightarrow{WO} \frac{(\ldots)}{\binom{m+n}{m}}$$
 \end{itemize}
 
 How is the normal ordered Hamiltonian related to the classical Hamiltonian? We consider the matrix elements of $H^{NO}$, $\la x^\prime | H^{NO} | x \ra$.
-$$\la x^\prime | H^{NO} | x \ra = \int \la x^\prime | p \ra \la p | H^{NO} | x \ra dp = \int dp \ e^{-\frac{ip(x-x^\prime)}{\hbar} H(p,x)$$
+$$\la x^\prime | H^{NO} | x \ra = \int \la x^\prime | p \ra \la p | H^{NO} | x \ra dp = \int dp \ e^{-\frac{ip(x-x^\prime)}{\hbar}} H(p,x)$$ Here $H(p,x)$ is just the classical Hamiltonian.
 
+To understand Weyl ordering, we must probably consider (due to similarity in the terms) $$e^{\alpha x + \beta p} = \sum_{N=0}^\infty \frac{1}{N!} (\alpha x + \beta p)^N = \sum_{N=0}^\infty \frac{1}{N!} \sum_{m,n = 0}^{m + n = N} \alpha^m \beta^n (x^m p^n)_{symm} = \sum_{m,n = 0}^{m + n = N} \frac{\alpha^m \beta^n}{m! n!} (x^m p^n)_{WO}$$
 
+Expanding $e^{\alpha x/2} e^{\beta p} e^{\alpha x/2}$ using the Baker-Campbell-Hausdorff formula, and the fact that $[x,p] = i \hbar$,
+$$e^{\alpha x/2} e^{\beta p} e^{\alpha x/2} = e^{\alpha x/2 + \beta p + \frac{\alpha \beta}{2} [x,p]} e^{ \alpha x/2} = e^{\alpha x + \beta p + \frac{\alpha \beta}{2} [x,p] + \frac{\alpha \beta}{2} [p,x]} = e^{\alpha x + \beta p}$$
 
-
+Now consider,
+\begin{align*}
+\la x_k |e^{\alpha x + \beta p}| x_{k-1} \ra &= \la x_k | e^{\alpha x/2} e^{\beta p} e^{\alpha x/2} | x_{k-1} \ra = e^{\frac{\alpha}{2} (x_k + x_{k+1})} \la x_k | e^{\beta p} | x_{k-1} \ra 
+\ret &= \int \frac{dp}{2 \pi \hbar} e^{\frac{ip}{\hbar}(x_k - x_{k-1})} e^{\frac{\alpha}{2} (x_k + x_{k+1}) + \beta p} 
+\end{align*}
 
 % Some general latex examples and examples making use of the
 % macros follow.  
 %**** IN GENERAL, BE BRIEF. LONG SCRIBE NOTES, NO MATTER HOW WELL WRITTEN,
 %**** ARE NEVER READ BY ANYBODY.
-
-
-
-
-
-
-
-
-
 
 % **** THIS ENDS THE EXAMPLES. DON'T DELETE THE FOLLOWING LINE:
 
