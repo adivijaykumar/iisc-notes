@@ -5,6 +5,9 @@ Check List :-
 - [ ] Write thesis
 - [ ] Write JNB paper
 - [ ] Feynman-Hibbs and Sakurai Path Integrals, exp(ipq), <p|q>, write up notes
+- [ ] Write that damned blog and increase Github activity
+- [ ] Complete Suvrat's lectures and start immersing yourself in those nice complexity papers by Hayden Preskill Harlow etc 
+- [ ] Tensor Networks too
 - [ ] Green Function and Branch Cuts review from Boas
 
 Papers for Project :-
