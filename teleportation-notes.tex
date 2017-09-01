@@ -172,7 +172,10 @@ Lets consider the quantum analog of the above protocol. Instead of bits, we cons
 
 Alice and Bob are currently far away from each other. Alice has a \textit{teleportee} qubit in the unit normalized state $$|\phi \ra = \alpha |0 \ra + \beta |1 \ra$$
 
-We can write the combined state of the three qubits as follows, with the first qubit denoting the teleportee, second denoting Alice's and third denoting Bob's. $$\frac{\alpha}{\sqrt{2}}|000 \ra + \frac{\alpha}{\sqrt{2}}|011 \ra + \frac{\beta}{\sqrt{2}}|100 \ra + \frac{\beta}{\sqrt{2}}|111 \ra$$
+We can write the combined state of the three qubits as follows, with the first qubit denoting the teleportee, second denoting Alice's and third denoting Bob's. 
+\begin{equation}
+\frac{\alpha}{\sqrt{2}}|000 \ra + \frac{\alpha}{\sqrt{2}}|011 \ra + \frac{\beta}{\sqrt{2}}|100 \ra + \frac{\beta}{\sqrt{2}}|111 \ra \label{combstate}
+\end{equation}
 
 We shall now measure the two qubits in Alice's possession (ie. first and second qubits) in the Bell Basis. The normalized Bell basis vectors are given by
 
@@ -180,12 +183,10 @@ $$|B_1 \ra = \frac{1}{\sqrt{2}}|00 \ra + \frac{1}{\sqrt{2}}|11 \ra ; |B_2 \ra = 
 |B_3 \ra = \frac{1}{\sqrt{2}}|00 \ra - \frac{1}{\sqrt{2}}|11 \ra ; |B_4 \ra = \frac{1}{\sqrt{2}}|01 \ra - \frac{1}{\sqrt{2}}|10 \ra$$
 
 We relate the computational basis to the Bell basis as
-
 $$|00 \ra = \frac{|B_1 \ra + |B_3 \ra}{\sqrt{2}} ; |10 \ra = \frac{|B_2 \ra + |B_4 \ra}{\sqrt{2}} ; |01 \ra = \frac{|B_2\ra - |B_4\ra}{\sqrt{2}}; |11 \ra = \frac{|B_1\ra - |B_3\ra}{\sqrt{2}}$$
 
-Substituting these expressions, one can write the combined state as 
+Substituting these expressions in \ref{combstate}, one can write the combined state as 
 $$\frac{|B_1 \ra(\alpha|0 \ra + \beta |1 \ra) + |B_2 \ra (\alpha |1 \ra + \beta |0 \ra) + |B_3 \ra (\alpha|0 \ra - \beta |1 \ra) |B_4\ra (\alpha|1 \ra - \beta |0 \ra)}{2}$$
-
 We can clearly see from this state that any measurement in the bell basis will give $|B_1 \ra, |B_2 \ra, |B_3 \ra$ or $|B_4 \ra$ with equal probability (25 percent). After the measurement, Bob's qubit is left in the state $\alpha|0 \ra + \beta |1 \ra$, $\alpha|1 \ra + \beta |0 \ra$, $\alpha|0 \ra - \beta |1 \ra$, and $\alpha|1 \ra + \beta |0 \ra$ respectively.
 
 Alice can, through a classical message, send the result of her measurement to Bob. Bob can then, depending on the classical message, apply the appropriate unitary operator on his state to take it to $(\alpha|0 \ra + \beta|1 \ra)$, the original state of the teleportee qubit. Thus, the teleportation has been completed successfully.
