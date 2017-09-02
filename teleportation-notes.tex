@@ -197,4 +197,16 @@ A few comments about this protocol :-
 \item This also implies that the teleportee qubit got teleported to Bob with no information about it existing anywhere in between Alice and Bob. This tenet of non-locality of information is crucial to quantum mechanics.
 \item The process of measuring the qubits destroys the existing entanglement between the qubits.
 \end{itemize}
+
+\section{Teleportation through Multiple Entangled States}
+We considered teleportation when Alice and Bob have one qubit each, entangled maximally. But what if they have 2 qubits each? Or in general, $N$ qubits each (ie. a total of $2N$ qubits)? How does one teleport a single qubit through these states? One protocol is described here.
+
+Alice selects one qubit out of her $N$ qubits. Lets call that qubit A, and the qubit to be teleported T. She measures the AT system in the Bell basis, and as described above sends a classical message to Bob containing the result of her measurement. Bob needs to act on his system with a unitary operator to get a 1-qubit subsystem of his set of qubits into the state of the teleportee qubit, and all is well.
+
+Some things to note and confirm :-
+\begin{itemize}
+\item The unitary operator that Bob acts as a part of this protocol is equivalent to the operator he would have used in the $N=1$ case on one of the qubits, tensored with the identity operator on rest of the qubits. This operator will obviously be dependent on the classical message sent.
+\item (confirm) Bob needs to know on which of his qubits he should act the $N=1$ case operator. This qubit should be the one which was originally entangled with the qubit A (the entanglement is destroyed by the process of measurement). So technically, the classical message sent must have some sort of identity of A which can be used by Bob to decide which qubit to act the unitary operator on.
+\item The degree of entanglement of the system is reduced by this protocol because the entanglement between one set of qubits is destroyed. If initially the entanglement degree was $Nk$ corresponding to $N$ entangled pairs, it now becomes $(N-1)k$.
+\end{itemize} 
 \end{document}
