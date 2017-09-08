@@ -4,21 +4,14 @@ Check List :-
 
 - [ ] Write thesis
 - [ ] Write JNB paper
-- [ ] Feynman-Hibbs and Sakurai Path Integrals, exp(ipq), <p|q>, write up notes
-- [ ] Write that damned blog and increase Github activity
 - [ ] Complete Suvrat's lectures and start immersing yourself in those nice complexity papers by Hayden Preskill Harlow etc 
 - [ ] Tensor Networks too
 - [ ] Green Function and Branch Cuts review from Boas
 
 Papers for Project :-
 
-- [ ] Many Body Localization by Sims et al
-- [ ] Susskind and Zhao review for the Journal Club Talk
-- [ ] Lieb-Robinson and the butterfly effect by Roberts and Swingle
-
 Reading from TBs :-
 
-- [ ] Quantum Computation from Nilesen and Chuang
 - [ ] QFT from Zee
 - [ ] Differential Geometry from Nakahara
 - [ ] Conformal Field Theory from Blumenhagen (pre-reading before Penedones' AdS/CFT)
@@ -39,7 +32,3 @@ Free time? :-
 - [ ] Blog on - GWSCHOOL, Susskind Paper, MBL and LR Bounds
 - [ ] What will the Schwarzschild solution lead to when the test particle has initial angular velocity (TeX it up)
 - [ ] IISc Pre-req problems
-
-Completed :-
-- [x] Have a look at Switchbacks and the Bridge to Nowhere - Susskind and Zhao, fast scramblers, and some other appendices and references in susskind zhao
-- [x] Revise angular momentum QM and 4-vector formalism of electromagnetism
