@@ -12,9 +12,7 @@ Papers for Project :-
 
 Reading from TBs :-
 
-- [ ] QFT from Zee
-- [ ] Differential Geometry from Nakahara
-- [ ] Conformal Field Theory from Blumenhagen (pre-reading before Penedones' AdS/CFT)
+- [ ] Conformal Field Theory from Joshua Qualls' Notes
 - [ ] Gravity and Strings by Ortin
 
 Good Physicist? :-
